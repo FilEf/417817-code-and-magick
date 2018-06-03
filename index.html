@@ -196,12 +196,12 @@
 
   function getWizardX(width) {
     //Находим центр поля за минусом половины ширины мага
-    return (width / 2) - (wizardWidth / 2);
+    return (width - wizardWidth) / 2;
   }
 
   function getWizardY(height) {
     //Т.к. координатная сетка начинается сверху, находим треть высоты за минусом половины высоты мага
-    return (height / 3) - (getWizardHeight() / 2);
+    return height / 3 - getWizardHeight() / 2;
   }
 
 </script>
