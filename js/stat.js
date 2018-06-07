@@ -39,11 +39,6 @@ function getMaxElement(arr) {
   return maxElement;
 }
 
-//  Генерация случайного числа
-function getRandNum(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
 window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, CLOUD_X + SHADOW_GAP, CLOUD_Y + SHADOW_GAP, SHADOW_COLOR);
   renderCloud(ctx, CLOUD_X, CLOUD_Y, CLOUD_COLOR);
@@ -66,7 +61,7 @@ window.renderStatistics = function (ctx, players, times) {
     ctx.fillText(curTime, positionX, timeY, BAR_HEIGHT);
 
 
-    ctx.fillStyle = (players[i] === 'Вы') ? BAR_CUR_PLAYER_COLOR : 'rgb(0, 0,' + getRandNum(100, 255) + ')';
+    ctx.fillStyle = (players[i] === 'Вы') ? BAR_CUR_PLAYER_COLOR : 'rgba(0, 0, 255, ' + (Math.random() + 0.2) + ')';
     ctx.fillRect(positionX, timeY + FONT_LINE_SPACING, BAR_WIDTH, nameY - timeY - FONT_LINE_SPACING - FONT_HEIGHT);
   }
 };
